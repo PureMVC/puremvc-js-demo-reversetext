@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- PAGE TITLE -->
+		<title>PureMVC_JS Native Demo - Text Reverser</title>
+		
+		<!-- CSS STYLES-->
+		<link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<!-- INPUT FORM -->
+		<form class="well form-horizontal" id="textForm">
+			<fieldset>
+			
+				<!-- INPUT TEXT -->
+				<div class="control-group">
+					<label class="control-label" for="inputText">Input Text</label>
+					<div class="controls">
+						<input type="text" class="span3" placeholder="Type something..." id="inputText">
+					</div>
+				</div>
+
+				<!-- OUTPUT TEXT (REVERSED) -->
+				<div class="control-group">
+					<label class="control-label" for="outputText" id="outputTextLabel">Output Text</label>
+					<div class="controls">
+						<input type="text" class="span3 uneditable-input" placeholder="Nothing to reverse..." id="outputText">
+					</div>
+				</div>		
+
+				<!-- OPTIONS -->
+				<div class="control-group">
+					<!-- REVERSE AS I TYPE -->
+					<label class="control-label" for="optionsCheckboxList">Options</label>
+					<div class="controls">
+						<label class="checkbox">
+							<input type="checkbox" name="optionsCheckboxList1" value="option1">Reverse as I type
+						</label>
+					</div>
+				</div>
+
+				<!-- ACTIONS -->
+				<div class="form-actions">
+					<!-- REVERSE -->
+					<button type="submit" class="btn btn-inverse vertical">Reverse</button>
+					<!-- CLEAR -->
+					<button type="reset" class="btn">Clear</button>
+				</div>
+			</fieldset>
+		</form>
+		
+		<!-- PUREMVC LIBRARY -->
+		<script src="lib/js/puremvc-1.0.js"></script>
+		
+		<!-- APPLICATION (VIEW/CONTROLLER RELATED) CONSTANTS -->
+		<script src="src/AppConstants.js"></script>
+		
+		<!-- APPLICATION FACADE -->
+		<script src="src/ApplicationFacade.js"></script>
+
+		<!-- PROXYS -->
+		<script src="src/model/proxy/TextProxy.js"></script>
+
+		<!-- COMMANDS -->
+		<script src="src/controller/command/StartupCommand.js"></script>
+		<script src="src/controller/command/PrepareViewCommand.js"></script>
+		<script src="src/controller/command/PrepareModelCommand.js"></script>
+		<script src="src/controller/command/PrepareControllerCommand.js"></script>
+		<script src="src/controller/command/ProcessTextCommand.js"></script>
+		
+		<!-- VIEW COMPONENTS -->
+		<script src="src/view/component/TextComponent.js"></script>
+		
+		<!-- MEDIATORS -->
+		<script src="src/view/mediator/TextComponentMediator.js"></script>
+		
+		<!-- START THE APPLICATION -->
+		<script>
+			// initialize the app when all DOM content has loaded.			
+			document.addEventListener('DOMContentLoaded', function (){	
+			
+			// initialize the facade by retrieving an instance and calling startup
+			demo.ApplicationFacade.getInstance(demo.ApplicationFacade.NAME).startup();
+			});
+		</script>
+	</body>
+</html>
