@@ -115,19 +115,6 @@ puremvc.define
 		},
 		
 		/**
-		 * Remove EventListeners from TextComponent. 
-		 * 
-		 * @param {string} type
-		 * @param {Function|Object} listener
-		 * @return {void}
-		 */
-		removeEventListener: function ( type, listener )
-		{
-			// delegate to #textForm
-			this.textForm.addEventListener( type, listener );
-		},			
-		
-		/**
 		 * An implementation of the 
 		 * {@link http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-Registration-interfaces W3C EventListener interface}. 
 		 * This allows the component to be added to its child components as
