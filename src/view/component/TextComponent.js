@@ -31,6 +31,9 @@ puremvc.define
 			
 			// listen to reverse button clicks, handled by #handleEvent
 			this.reverseButton.addEventListener( 'click', this );
+			
+			// listen for input keystrokes, handled by #handleEvent
+			this.textInput.addEventListener( 'keyup', this );	
 		}
 	},
 
@@ -148,7 +151,7 @@ puremvc.define
 				 * ust fire a text changed event
 				 */
 				case 'keyup':
-					this.dispatchTextChangedEvent();
+					if (this.checkbox.checked) this.dispatchTextChangedEvent();
 					break;
 				
 				/*
@@ -161,17 +164,6 @@ puremvc.define
 					this.dispatchTextChangedEvent();
 					break;
 				
-				/*
-				 * The components 'Reverse as I type' checkbox as been
-				 * ticked or unticked. If ticked, listen to keypress
-				 * events, otherwise unsubscribe to keypress events.
-				 */	
-				case 'change':
-					if (this.checkbox.checked)
-						this.textInput.addEventListener( 'keyup', this );	
-					else
-						this.textInput.removeEventListener( 'keyup', this );
-					break;
 			}
 		},
 
@@ -185,7 +177,7 @@ puremvc.define
 		{
 			// use W3C compliant synthetic events dispatch api (SORRY, NO IE SUPPORT)
 			var textChangedEvent= document.createEvent( "Events" );
-			textChangedEvent.initEvent(this.constructor.TEXT_CHANGED);
+			textChangedEvent.initEvent(this.constructor.TEXT_CHANGED, false, false);
 			textChangedEvent.text= this.getInputText();
 			this.textForm.dispatchEvent( textChangedEvent );
 		}
