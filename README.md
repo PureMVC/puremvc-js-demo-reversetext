@@ -3,7 +3,7 @@ This simple demo shows the most common actors and collaborations found in a Pure
 
 The pseudo-classes are written in PureMVC's optional built-in style.
 
-* [Live Demo](http://darkstar.puremvc.org/content_header.html?url=http://puremvc.org/pages/demos/JS/Demo_JS_ReverseText/native/&desc=PureMVC%20JavaScript%20Demo:%20Reverse%20Text)
+* [Live Demo](http://puremvc.org/pages/demos/JS/Demo_JS_ReverseText/native/)
 * [Discussion](http://forums.puremvc.org/index.php?topic=2008.0)
 
 ## Screenshot
